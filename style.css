@@ -1429,7 +1429,7 @@ section {
   }
 
   .hv {
-    order: unset
+    order: 2;
   }
 
   .ab-v {
@@ -1523,8 +1523,9 @@ section {
   /* 1. Badge + Headline */
   .hero-head {
     order: 1;
-    margin-bottom: 24px
+    margin-bottom: 0;
   }
+
 
   .hero h1 {
     font-size: 1.7rem;
@@ -1540,9 +1541,9 @@ section {
 
   /* 2. Paragraph */
   .hero-p {
-    order: 2;
+    order: 3;
     font-size: .95rem;
-    margin: 0 auto 24px;
+    margin: 0 auto 22px;
     max-width: 420px;
     line-height: 1.75;
     text-align: center
@@ -1550,7 +1551,7 @@ section {
 
   /* 3. CTA Buttons */
   .hero-btns {
-    order: 3;
+    order: 4;
     margin-bottom: 28px;
     gap: 12px
   }
@@ -1712,12 +1713,43 @@ section {
   }
 
   /* NAV */
-  .nav-inner {
-    height: 64px;
+  .footer .nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px;
+    text-align: center;
   }
 
-  .nav-logo {
-    font-size: 1.1rem;
+  .footer .nav-logo img {
+    margin: 0 auto;
+  }
+
+  .ft-brand {
+    text-align: center;
+  }
+
+  .footer .nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* geser isi ke kiri */
+    gap: 6px;
+    /* kecilin jarak logo & tulisan */
+    width: fit-content;
+    margin: 0 auto 12px;
+    /* tetap center sebagai block */
+  }
+
+  /* optional biar lebih rapat lagi */
+  .footer .nav-logo img {
+    margin: 0;
+  }
+
+  .footer .nav-logo span,
+  .footer .nav-logo h1,
+  .footer .nav-logo h2 {
+    margin: 0;
   }
 
   /* HERO FIX */
@@ -1752,14 +1784,102 @@ section {
     justify-content: center;
   }
 
-  /* HIDE VISUAL YANG BERANTAKAN DI MOBILE */
-  .hv,
-  .hf,
-  .ring,
-  .blob,
-  .blob2 {
+  /* HERO VISUAL MOBILE - PINDAH KE BAWAH JUDUL */
+  @media (max-width: 768px) {
+  .hv {
+    display: flex !important;
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0 32px;
+    position: relative;
+  }
+
+  .ha {
+    max-width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+  }
+
+  .ho-1 {
+    width: 145px;
+    height: 145px;
+  }
+
+  .ho-2 {
+    width: 98px;
+    height: 98px;
+  }
+
+  .ho-3 {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ho-3 i {
+    font-size: 1.15rem;
+  }
+
+  .hero-p {
+    order: 3;
+    margin: 6px auto 24px;
+  }
+
+  .hero-btns {
+    order: 4;
+  }
+
+  .hero-trust {
+    order: 5;
+  }
+
+  .ring {
     display: none !important;
   }
+
+  .hf {
+    display: flex !important;
+    position: absolute;
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-size: 0.58rem;
+    gap: 5px;
+    white-space: nowrap;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+  }
+
+  .hf i {
+    font-size: 0.72rem;
+  }
+
+  .hf1 {
+    top: 6px;
+    left: -42px;
+  }
+
+  .hf2 {
+    top: 6px;
+    right: -44px;
+  }
+
+  .hf3 {
+    bottom: 18px;
+    left: -36px;
+  }
+
+  .hf4 {
+    bottom: 10px;
+    right: -38px;
+  }
+
+  .hero .blob,
+  .hero .blob2 {
+    display: none !important;
+  }
+}
 
   /* SERVICES */
   .sv-grid {
@@ -1816,18 +1936,44 @@ section {
 
 /* EXTRA SMALL DEVICE */
 @media (max-width: 480px) {
-
-  .hero h1 {
-    font-size: 1.4rem;
+  .ha {
+    max-width: 150px;
+    height: 150px;
   }
 
-  .hero-p {
-    font-size: 0.88rem;
+  .ho-1 {
+    width: 125px;
+    height: 125px;
   }
 
-  .btn {
-    padding: 12px 18px;
-    font-size: 0.85rem;
+  .ho-2 {
+    width: 86px;
+    height: 86px;
   }
 
+  .ho-3 {
+    width: 46px;
+    height: 46px;
+  }
+
+  .hf {
+    font-size: 0.52rem;
+    padding: 6px 8px;
+  }
+
+  .hf1 {
+    left: -30px;
+  }
+
+  .hf2 {
+    right: -32px;
+  }
+
+  .hf3 {
+    left: -26px;
+  }
+
+  .hf4 {
+    right: -28px;
+  }
 }
